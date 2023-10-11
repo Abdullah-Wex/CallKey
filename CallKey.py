@@ -46,8 +46,6 @@ class CallKey:
                 return True
 
     def filter(self,function,unique=False):
-        if type(self.value) != list and type(self.value) != dict:
-            return
         result = CallKey(self.value,self.key)
         if type(self.value) == dict:
             result.value = dict(filter(function,result.value))
